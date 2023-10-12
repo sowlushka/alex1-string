@@ -22,10 +22,13 @@ h2{
 }
 
 .solution{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 5px auto;
     padding: 10px;
-    min-width: 280px;
-    max-width: 600px;
+    /*min-width: 280px;*/
+    max-width: 280px;
     border-radius: 3px;
     background-color: #F0F0F0;
     box-shadow: 7px 7px 3px #C0C0C0;

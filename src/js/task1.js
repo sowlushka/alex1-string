@@ -25,6 +25,6 @@ button1.onclick=(e)=>{
         let charCode=char.charCodeAt(0);
         standardPhone+=charCode>0x2F && charCode<0x3A?char:"";
     }
-    document.querySelector("#phone-1 ~ .solution-result").innerText=standardPhone;
+    document.querySelector("#phone-1 ~ .solution-result").innerText="+"+standardPhone;
 
 }
