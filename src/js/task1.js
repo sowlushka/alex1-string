@@ -1,4 +1,4 @@
-export const button1=document.querySelector("#phone-1 + button");
+const button1=document.querySelector("#phone-1 + button");
 button1.onclick=(e)=>{
     let inputPhone=document.getElementById("phone-1").value;
     //Избавляемя от знаков -,(,)

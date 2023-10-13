@@ -1,6 +1,9 @@
 :root{
     --solution-color: #303030;
-    --solution-background-color: 
+    --solution-background-color: #F0F0F0;
+    --task-font-color: #405040;
+    --solution-shadow-color: #C0C0C0;
+    --solution-result-font-color:#1c5504;
 }
 
 body{
@@ -14,7 +17,7 @@ h1{
 
 .task{
     margin: 10px;
-    color: #405040
+    color: var(--task-font-color);
 }
 
 h2{
@@ -27,11 +30,10 @@ h2{
     align-items: center;
     margin: 5px auto;
     padding: 10px;
-    /*min-width: 280px;*/
     max-width: 280px;
     border-radius: 3px;
-    background-color: #F0F0F0;
-    box-shadow: 7px 7px 3px #C0C0C0;
+    background-color: var(--solution-background-color);
+    box-shadow: 7px 7px 3px var(--solution-shadow-color);
     color: var(--solution-color);
 }
 
@@ -43,13 +45,13 @@ h2{
 .solution input{
     border: 1px solid var(--solution-color);
     border-radius: 5px;
-    width: 180px;
+    width: 220px;
 }
 
 .solution-result{
     height: 30px;
     margin: 5px 0px 5px 1px;
-    color:#1c5504;
+    color:var(--solution-result-font-color);
     font-family: monospace;
     font-size: 16px;
 }
