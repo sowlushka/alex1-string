@@ -1,4 +1,4 @@
-import { ShowSolutionResult, createTaskHTML } from "..";
+import { ShowSolutionResult, createTaskHTML } from "./common";
 const id="task2";
 const taskNum=Number(id.replace("task",""));
 
