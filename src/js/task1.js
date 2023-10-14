@@ -1,8 +1,24 @@
-const button1=document.querySelector("#phone-1 + button");
-button1.onclick=(e)=>{
-    let inputPhone=document.getElementById("phone-1").value;
-    //Избавляемя от знаков -,(,)
-    inputPhone=inputPhone.replaceAll("-","").replaceAll("(","").replaceAll(")","");
+import { ShowSolutionResult, createTaskHTML } from "..";
+const id="task1";
+const taskNum=Number(id.replace("task",""));
+
+createTaskHTML({
+        taskNum: taskNum,
+        taskText: "Спросите у пользователя телефонный номер и выведете его в нормализованном виде.",
+        inputText: "Введите номер телефона:",
+        inputType: "tel"
+    });
+
+
+const button=document.querySelector(`#${id} + button`);
+button.onclick=(e)=>{
+    let str=document.getElementById(id).value;
+    ShowSolutionResult(id, stringSolution(str));
+}
+
+
+function stringSolution(str){
+    let inputPhone=str.replaceAll("-","").replaceAll("(","").replaceAll(")","");//Удаляем, так как могут быть 8(10), 8-10- с выходом на международную линию
     let standardPhone="";
     for(let i=0;i<inputPhone.length;++i){
         
@@ -25,6 +41,5 @@ button1.onclick=(e)=>{
         let charCode=char.charCodeAt(0);
         standardPhone+=charCode>0x2F && charCode<0x3A?char:"";
     }
-    document.querySelector("#phone-1 ~ .solution-result").innerText="+"+standardPhone;
-
+    return "+"+standardPhone;
 }
