@@ -2,6 +2,7 @@ import { stringSolution1 } from "./task1";
 import { stringSolution2 } from "./task2";
 import { stringSolution3 } from "./task3";
 import { stringSolution4 } from "./task4";
+import { stringSolution5 } from "./task5";
 
 export const tasks=[
     {
@@ -27,6 +28,12 @@ export const tasks=[
         task: "Выведете самое длинное слово в предложении (слова разбиты пробелами).",
         inputText: "Напишите предложение:",
         solution: stringSolution4
+    },
+    {
+        id:5,
+        task:"Пользователь вводит слово. Если оно является перевёртышем выведете true иначе false. Слово-перевёртыш - это слово, которое одинаково читается с начала и с конца. Слова могут быть как на английском, так и на русском.",
+        inputText:"Введите слово:",
+        solution: stringSolution5
     }
 ];
 
