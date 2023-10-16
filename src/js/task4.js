@@ -1,20 +1,4 @@
-import { ShowSolutionResult, createTaskHTML } from "./common";
-const id="task4";
-const taskNum=Number(id.replace("task",""));
-
-createTaskHTML({
-        taskNum: taskNum,
-        taskText: "Выведете самое длинное слово в предложении (слова разбиты пробелами).",
-        inputText: "Напишите предложение"
-    });
-
-const button=document.querySelector(`#${id} + button`);
-button.onclick=(e)=>{
-    let str=document.getElementById(id).value;
-    ShowSolutionResult(id, stringSolution(str));
-}
-
-function stringSolution(str){
+export function stringSolution4(str){
 //Основная функция, в которой осуществляется решение задачи на строки
 const splitArr=[" ", ",", ".", ":"];
 let workStr=str;

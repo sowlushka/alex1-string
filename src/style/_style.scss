@@ -4,6 +4,7 @@
     --task-font-color: #405040;
     --solution-shadow-color: #C0C0C0;
     --solution-result-font-color:#1c5504;
+    --solution-max-width: 280px;//Минимальная ширина мобильного устройства
 }
 
 body{
@@ -16,12 +17,19 @@ h1{
 }
 
 .task{
-    margin: 10px 5px 20px 10px;
+    margin: 30px 10px;
     color: var(--task-font-color);
 }
 
 h2{
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.task-description{
+    max-width: calc(2 * var(--solution-max-width));
+    margin: 2px auto;
 }
 
 .solution{

@@ -1,23 +1,4 @@
-import { ShowSolutionResult, createTaskHTML } from "./common";
-const id="task1";
-const taskNum=Number(id.replace("task",""));
-
-createTaskHTML({
-        taskNum: taskNum,
-        taskText: "Спросите у пользователя телефонный номер и выведете его в нормализованном виде.",
-        inputText: "Введите номер телефона:",
-        inputType: "tel"
-    });
-
-
-const button=document.querySelector(`#${id} + button`);
-button.onclick=(e)=>{
-    let str=document.getElementById(id).value;
-    ShowSolutionResult(id, stringSolution(str));
-}
-
-
-function stringSolution(str){
+export function stringSolution1(str){
     let inputPhone=str.replaceAll("-","").replaceAll("(","").replaceAll(")","");//Удаляем, так как могут быть 8(10), 8-10- с выходом на международную линию
     let standardPhone="";
     for(let i=0;i<inputPhone.length;++i){

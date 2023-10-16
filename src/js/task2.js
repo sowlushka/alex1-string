@@ -1,24 +1,4 @@
-import { ShowSolutionResult, createTaskHTML } from "./common";
-const id="task2";
-const taskNum=Number(id.replace("task",""));
-
-createTaskHTML({
-        taskNum: taskNum,
-        taskText: "Пользователь вводит строку. Нужно сформировать и вывести массив из всех чисел в этой строке.",
-        inputText: "Введите текст с числами"
-    });
-
-const button=document.querySelector(`#${id} + button`);
-button.onclick=(e)=>{
-    let str=document.getElementById(id).value;
-    ShowSolutionResult(id, stringSolution(str));
-}
-
-
-
-
-
-function stringSolution(str){
+export function stringSolution2(str){
 //Основная функция, в которой осуществляется решение задачи на строки
 
 let arrOfNum=[];
