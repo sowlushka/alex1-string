@@ -3,6 +3,7 @@ import { stringSolution2 } from "./task2";
 import { stringSolution3 } from "./task3";
 import { stringSolution4 } from "./task4";
 import { stringSolution5 } from "./task5";
+import { trim } from "./task6";
 
 export const tasks=[
     {
@@ -34,6 +35,12 @@ export const tasks=[
         task:"Пользователь вводит слово. Если оно является перевёртышем выведете true иначе false. Слово-перевёртыш - это слово, которое одинаково читается с начала и с конца. Слова могут быть как на английском, так и на русском.",
         inputText:"Введите слово:",
         solution: stringSolution5
+    },
+    {
+        id:6,
+        task:"Удалите лишние пробелы из строки. Пробелы лишние если они в начале или в конце строки, а также если между словами больше одного пробела. Считается, что строка состоит только из букв и пробелов.",
+        inputText: "Напишите предложение:",
+        solution: trim
     }
 ];
 

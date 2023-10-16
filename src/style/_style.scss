@@ -4,7 +4,7 @@
     --task-font-color: #405040;
     --solution-shadow-color: #C0C0C0;
     --solution-result-font-color:#1c5504;
-    --solution-max-width: 280px;//Минимальная ширина мобильного устройства
+    --solution-max-width: 320px;//Минимальная ширина мобильного устройства
 }
 
 body{
@@ -38,7 +38,8 @@ h2{
     align-items: center;
     margin: 5px auto;
     padding: 10px;
-    max-width: 280px;
+    max-width:var(--solution-max-width);
+    height: auto;
     border-radius: 3px;
     background-color: var(--solution-background-color);
     box-shadow: 7px 7px 3px var(--solution-shadow-color);
@@ -62,4 +63,10 @@ h2{
     color:var(--solution-result-font-color);
     font-family: monospace;
     font-size: 16px;
+    
+}
+
+.solution-result div{
+    word-wrap: break-word;
+    word-break: break-all;
 }
