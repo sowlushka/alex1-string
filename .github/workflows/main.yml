@@ -30,11 +30,8 @@ jobs:
       - name: Build 👷
         run: npm run build
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          # в значение GITHUB_TOKEN помещается ссылка на ваш секрет в репозитории
-          GITHUB_TOKEN: ${{ secrets.ALEX1_STRING_REPOSITORY_SECRET }}
-          BRANCH: gh-pages
-          FOLDER: dist
-          CLEAN: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
