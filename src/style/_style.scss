@@ -51,6 +51,10 @@ h2{
     display: block;
 }
 
+.solution-inputs-container{
+    flex-grow: 1;
+}
+
 .solution input{
     border: 1px solid var(--solution-color);
     border-radius: 5px;
@@ -58,15 +62,16 @@ h2{
 }
 
 .solution-result{
-    height: 30px;
     margin: 5px 0px 5px 1px;
     color:var(--solution-result-font-color);
     font-family: monospace;
     font-size: 16px;
-    
+    min-height: 30px;
 }
 
 .solution-result div{
     word-wrap: break-word;
     word-break: break-all;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
