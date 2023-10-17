@@ -37,5 +37,5 @@ jobs:
           # в данном случае его название KEY
           GITHUB_TOKEN: ${{ secrets.ALEX1_STRING_REPOSITORY_SECRET }}
           BRANCH: gh-pages
-          FOLDER: dist
+          FOLDER: ./dist
           CLEAN: true
