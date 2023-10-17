@@ -19,7 +19,7 @@ export function stringSolution1(str){
 
         }
         /*Удаляем нецифровые символы */
-        let charCode=char.charCodeAt(0);
+        let charCode=char.codePointAt(0);
         standardPhone+=charCode>0x2F && charCode<0x3A?char:"";
     }
     return "+"+standardPhone;

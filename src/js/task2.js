@@ -1,7 +1,11 @@
 export function stringSolution2(str){
 //Основная функция, в которой осуществляется решение задачи на строки
 
-let arrOfNum=[];
+    return "["+getNumbersArray(str).join(", ")+"]";
+}
+
+export function getNumbersArray(str){
+    let arrOfNum=[];
     let doParse;
     do{
         doParse=false;
@@ -31,11 +35,10 @@ let arrOfNum=[];
             arrOfNum.push(num);
             str=str.slice(numPositionEnd+1);
         }
-    }while(doParse)
-
-return "["+arrOfNum.join(", ")+"]";
+    }while(doParse);
+    return arrOfNum;
 }
 
 function isCharNumber(number){
-    return number.charCodeAt(0)>0x2F && number.charCodeAt(0)<0x3A;
+    return number.codePointAt(0)>0x2F && number.codePointAt(0)<0x3A;
 }
