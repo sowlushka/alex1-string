@@ -1,27 +1,30 @@
-const accessedSymbols=["0","1","2","3","4","5","6","7","8","9",
-".", "(",")","=","+","-","*","/","^"];
-
 
 export function stringSolution8(str){
+  let equalParts=str.split('=');
   
-    //Защита кода от несанкционированных инъекций.
-    //Проверяем выражение на разрешенные знаки
+  return equalParts.map(part=>{//Строковую часть уравнения преобразуем к результату вычисления
 
-    if(!isCharsAccessed(str)){    //В тексте попались неразрешенные символы
-            return '<font color="red">Ошибка. В выражении неразрешенные символы</font>';
-    }else if(!str.includes("=")){
-            return '<font color="red">Ошибка. В выражении не найден знак равенства</font>';
-    }else if(str.split("=").length>2){
-        return '<font color="red">Ошибка. В выражении больше одного знака равенства</font';
-    }
+                let operands=part.match(/(^-?\d+\.\d+|^-?\d+)|(\d+\.\d+|\d+)/g);//Получаем массив цифр
+                let operators=part.match(/(?<!^)[\+\-*/]/mg) ?? [];//Берём все операторы кроме оператора в первой позиции (знак мину включен в первый операнд)
+                return operands.reduce((res, curr,indx)=>{//В этом редьюсе считаем результат выражения
+                                                            let operation;
+                                                            switch (operators[indx-1]){
+                                                                
+                                                                case '+':
+                                                                    operation=Number(res)+Number(curr);
+                                                                    break;
+                                                                case '-':
+                                                                    operation=Number(res)-Number(curr);
+                                                                    break;
+                                                                case '/':
+                                                                    operation=Number(res)/Number(curr);
+                                                                    break;
+                                                                case '*':
+                                                                    operation=Number(res)*Number(curr);
+                                                            }
+                                                            return operation;
+                                                        });
+                }).every((el,indx,arr)=>
+                        el==arr[0]);//Проверяем равенство всех частей уравнения
 
-    let newStr=str.replaceAll("=","==").replaceAll("^","**");
-    return Boolean(eval(newStr)).toString();
-
-}
-
-export function isCharsAccessed(str, accessedCharsArray=accessedSymbols){
-
-    return str.split("").every(symbol=>accessedCharsArray.
-        findIndex(accSymbol=>accSymbol===symbol)!=-1);
 }
