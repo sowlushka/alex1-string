@@ -1,3 +1,6 @@
+//Вариант решения через польскую запись
+import { getPolandExpression, calcPolandExpression } from "./polandNotation";
+
 
 export function stringSolution8(str){
   let equalParts=str.split('=');
@@ -24,6 +27,18 @@ export function stringSolution8(str){
                                                             }
                                                             return operation;
                                                         });
+                }).every((el,indx,arr)=>
+                        el==arr[0]);//Проверяем равенство всех частей уравнения
+
+}
+
+export function stringSolution8_2(str){
+//Решение выражений через использование польской нотации
+  let equalParts=str.split('=');
+  
+  return equalParts.map(part=>{//Строковую часть уравнения преобразуем к результату вычисления
+                let expr=getPolandExpression(part);
+                return +calcPolandExpression(expr);
                 }).every((el,indx,arr)=>
                         el==arr[0]);//Проверяем равенство всех частей уравнения
 

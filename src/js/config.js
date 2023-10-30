@@ -5,7 +5,7 @@ import { stringSolution4 } from "./task4";
 import { stringSolution5 } from "./task5";
 import { trim } from "./task6";
 import { stringSolution7 } from "./task7";
-import { stringSolution8 } from "./task8";
+import { stringSolution8, stringSolution8_2 } from "./task8";
 import { stringSolution9 } from "./task9";
 
 export const tasks=[
@@ -55,11 +55,11 @@ export const tasks=[
         id: 8,
         task:'На вход подаётся строка вида "12+23=35". Выведете на экран <font color="red">true</font> если выражение верно или <font color="red">false</font> если выражение не верно.',
         inputText:"Введите математическое тождество: ",
-        solution: stringSolution8
+        solution: stringSolution8_2
     },
     {
         id:9,
-        task:'На вход подаётся строка вида "12+23-4*5/10+11". Выведете на экран результат выражения. Приоритет знаков не имеет значения.',
+        task:'На вход подаётся строка вида "12+23-4*5/10+11". Выведете на экран результат выражения. Приоритет знаков и скобок ИМЕЕТ значение.',
         inputText: "Введите математическое выражение: ",
         solution: stringSolution9
     }
